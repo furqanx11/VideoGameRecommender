@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations for {{ game }}</title>
+</head>
+<body>
+    <h1>Recommendations for {{ game }}</h1>
+    <h2>Based on Tags</h2>
+    <ul>
+        {% for item in tag_recommendations %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <h2>From the Same Developer</h2>
+    <ul>
+        {% for item in developer_recommendations %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Recent Games</h2>
+    <ul>
+        {% for item in recent_games %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Top Reviewed Games</h2>
+    <ul>
+        {% for item in top_reviewed_games %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>

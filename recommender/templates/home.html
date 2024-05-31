@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Recommendation System</title>
+</head>
+<body>
+    <h1>Game Recommendation System</h1>
+    
+    <form action="{% url 'recommend' %}" method="post">
+        {% csrf_token %}
+        <label for="game">Enter a game name:</label>
+        <input type="text" id="game" name="game">
+        <input type="submit" value="Get Recommendations">
+    </form>
+    
+    <h2>Top Reviewed Games</h2>
+    <ul>
+        {% for game in top_reviewed_games %}
+            <li>{{ game }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Most Recent Games</h2>
+    <ul>
+        {% for game in recent_games %}
+            <li>{{ game }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
